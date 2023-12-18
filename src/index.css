@@ -1,0 +1,13 @@
+.primary{
+    background-color: blue;
+    color: white;
+}
+
+.secondary{
+    background-color: black;
+    color: white;
+}
+
+.warning{
+    background-color: orange;
+}
