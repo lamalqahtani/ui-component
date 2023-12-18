@@ -8,7 +8,8 @@ const App = () => {
         icon={<Icon>star</Icon>}
         text="Greetings"
         onClick={() => alert("hi")}
-        style="secondary"
+        btnStyle="secondary"
+        title="title"
       />
     </>
   );

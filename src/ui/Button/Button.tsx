@@ -1,13 +1,13 @@
 import React from "react";
 
 // Three main styles for the buttons, primary - secondary - warning and reverse all.
-interface ButtonProps {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactElement;
   text?: string;
-  style?: keyof typeof style;
+  btnStyle?: keyof typeof style;
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  //   attributes: React.HTMLAttributes<HTMLButtonElement>;
+  //    React.HTMLAttributes<HTMLButtonElement>;
 }
 
 let style = {
@@ -15,15 +15,17 @@ let style = {
   secondary: "secondary",
   warning: "warning",
 };
-export const Button = (props: ButtonProps) => {
+export const Button = ({
+  className,
+  text,
+  icon,
+  btnStyle,
+  ...props
+}: ButtonProps) => {
   return (
-    <button
-      className={style[props.style ?? "primary"]}
-      //   className={params.className}
-      onClick={props.onClick}
-    >
-      {props.text}
-      {props.icon}
+    <button className={style[btnStyle ?? "primary"]} {...props}>
+      {text}
+      {icon}
     </button>
   );
 };
