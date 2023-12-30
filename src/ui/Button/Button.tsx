@@ -11,9 +11,9 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 }
 
 let style = {
-  primary: "primary",
-  secondary: "secondary",
-  warning: "warning",
+  primary: "bg-primary text-white ",
+  secondary: "bg-secondary text-white",
+  warning: "bg-warning text-white",
 };
 export const Button = ({
   className,
@@ -23,7 +23,12 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <button className={style[btnStyle ?? "primary"]} {...props}>
+    <button
+      className={`rounded-md px-2 py-1 flex justify-center items-center 
+      ${style[btnStyle ?? "primary"]} 
+      ${className}`}
+      {...props}
+    >
       {text}
       {icon}
     </button>
