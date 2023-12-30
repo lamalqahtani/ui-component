@@ -1,3 +1,4 @@
+import { Tag } from "./ui/Tag";
 import { Button } from "./ui/Button";
 import Icon from "@mui/material/Icon";
 
@@ -11,6 +12,7 @@ const App = () => {
         btnStyle="secondary"
         title="title"
       />
+      <Tag text="tag text" />
     </>
   );
 };
